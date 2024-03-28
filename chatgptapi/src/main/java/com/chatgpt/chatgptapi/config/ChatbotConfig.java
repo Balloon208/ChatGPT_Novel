@@ -6,7 +6,7 @@ public class ChatbotConfig {
     public static final String AUTHORIZATION = "Authorization";
     public static final String BEARER = "Bearer ";
 
-    public static String API_KEY;
+    public static String API_KEY = "YourAPIKey";
 
     @Value("${chatbot.api_key}")
     public void setApiKey(String apiKey) {

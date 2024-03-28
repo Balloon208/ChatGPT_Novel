@@ -5,6 +5,8 @@ import com.chatgpt.chatgptapi.config.ChatbotConfig;
 import com.chatgpt.chatgptapi.controller.dto.ChatbotRequestDto;
 import com.chatgpt.chatgptapi.controller.dto.ChatbotResponseDto;
 import com.chatgpt.chatgptapi.controller.dto.QuestionRequestDto;
+import com.chatgpt.chatgptapi.repository.ChatbotRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +18,10 @@ import java.util.List;
 import java.util.Map;
 
 @Service
+@RequiredArgsConstructor
 public class ChatbotService {
+
+    private final ChatbotRepository chatbotRepository;
     private static RestTemplate restTemplate = new RestTemplate();
 
     public HttpEntity<ChatbotRequestDto> buildHttpEntity(ChatbotRequestDto requestDto){
@@ -50,5 +55,9 @@ public class ChatbotService {
                         )
                 )
         );
+    }
+
+    public void save(ChatbotResponseDto chatbotResponseDto){
+
     }
 }

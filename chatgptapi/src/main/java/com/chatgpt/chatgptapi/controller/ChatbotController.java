@@ -20,6 +20,8 @@ public class ChatbotController {
     @PostMapping("/query")
     public ChatbotResponseDto sendQuestion(@RequestBody QuestionRequestDto requestDto)
     {
-        return chatbotService.Sendquery(requestDto);
+        ChatbotResponseDto result = chatbotService.Sendquery(requestDto);
+        // chatbotService.save(result);
+        return result;
     }
 }

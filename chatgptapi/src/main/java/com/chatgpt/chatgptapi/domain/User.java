@@ -3,12 +3,16 @@ package com.chatgpt.chatgptapi.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity
-public class Chatbot {
+public class User {
     @Id
-    public int logid;
+    public Integer id;
+
     @Column
-    public String chatlog;
+    public String name;
+    @Column
+    public String loginid;
+    @Column
+    public String password;
 }
